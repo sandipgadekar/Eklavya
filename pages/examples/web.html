@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Registration Page</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
+
+    <title>
+        Web Development course
+    </title>
+
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <h1 align="center"> Introduction to Web Development </h1>
+        <table class="table table-striped" align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+            <tr>
+                <th>Course Title</th>
+                <th>Description</th>
+                <th>Created By</th>
+                <th>Duration</th>
+            </tr>
+
+            <tr id="row1">
+                <td id="course_row1">  Introduction to Web Development</td>
+                <td id="description_row1">beginers</td>
+                <td id="createdby_row1">Nina Zakharenko</td>
+                <td id="duration_row1">2h 30m </td>
+                <td>
+                    <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                    <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                </td>
+            </tr>
+
+            <tr id="row2">
+                <td id="course_row2">Introduction to Java</td>
+                <td id="description_row2">beginers</td>
+                <td id="createdby_row2">Denis ritche</td>
+                <td id="duration_row2">5h 25m</td>
+                <td>
+                    <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                    <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+                </td>
+            </tr>
+
+            <tr id="row3">
+                <td id="course_row3">Introduction to jquery</td>
+                <td id="description_row3">intermediate</td>
+                <td id="createdby_row3"> abc</td>
+                <td id="duration_row3"> 2h 30m</td>
+                <td>
+                    <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                    <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                    <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" id="new_name"></td>
+                <td><input type="text" id="new_country"></td>
+                <td><input type="text" id="new_age"></td>
+                <td><input type="text" id="new_duration"></td>
+                <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+            </tr>
+
+        </table>
+    </div>
+
+
+
+
+    <!-- add new Courses -->
+
+    <script>
+        function edit_row(no) {
+            document.getElementById("edit_button" + no).style.display = "none";
+            document.getElementById("save_button" + no).style.display = "block";
+
+            var course = document.getElementById("course_row" + no);
+            var description = document.getElementById("description_row" + no);
+            var createdby = document.getElementById("createdby_row" + no);
+            var duration = document.getElementById("duration_row" + no)
+
+            var course_data = course.innerHTML;
+            var description_data = description.innerHTML;
+            var createdby_data = createdby.innerHTML;
+            var duration_data = duration.innerHTML;
+
+            course.innerHTML = "<input type='text' id='course_text" + no + "' value='" + course_data + "'>";
+            description.innerHTML = "<input type='text' id='description_text" + no + "' value='" + description_data + "'>";
+            createdby.innerHTML = "<input type='text' id='createdby_text" + no + "' value='" + createdby_data + "'>";
+            duration.innerHTML = "<input type='text' id='duration_row" + no + "' value='" + duration_data + "'>";
+        }
+
+        function save_row(no) {
+            var course_val = document.getElementById("course_text" + no).value;
+            var description_val = document.getElementById("description_text" + no).value;
+            var createdby_val = document.getElementById("createdby_text" + no).value;
+            var duration_val = document.getElementById("duration_text" + no).value;
+
+            document.getElementById("course_row" + no).innerHTML = course_val;
+            document.getElementById("description_row" + no).innerHTML = description_val;
+            document.getElementById("createdby_row" + no).innerHTML = createdby_val;
+            document.getElementById("duration_row" + no).innerHTML = duration_val;
+
+            document.getElementById("edit_button" + no).style.display = "block";
+            document.getElementById("save_button" + no).style.display = "none";
+        }
+
+        function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        }
+
+        function add_row() {
+            var new_name = document.getElementById("new_course").value;
+            var new_country = document.getElementById("new_description").value;
+            var new_age = document.getElementById("new_createdby").value;
+            var new_duration = document.getElementById("new_duration").value;
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='course_row" + table_len + "'>" + new_course + "</td><td id='description_row" + table_len + "'>" + new_description + "</td><td id='createdby_row" + table_len + "'>" + new_createdby + "</td><td id='duration_row" + table_len + "'>" + new_duration + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'> <input type='button' id='save_button" + table_len + "'> value='Save' class='save' onclick='save_row(" + table_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            document.getElementById("new_course").value = "";
+            document.getElementById("new_description").value = "";
+            document.getElementById("new_createdby").value = "";
+            document.getElementById("new_duration").value = "";
+        }
+    </script>
+
+
+
+    <!-- jQuery 2.2.3 -->
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Morris.js charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="plugins/morris/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/knob/jquery.knob.js"></script>
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+
+
+
+</body>
+
+</html>
