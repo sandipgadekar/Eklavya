@@ -37,6 +37,131 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+
+
+    <style>
+        @import "http://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+        .rwd-table {
+            margin: 1em 0;
+            min-width: 1400px;
+        }
+        
+        .rwd-table tr {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .rwd-table th {
+            display: none;
+        }
+        
+        .rwd-table td {
+            display: block;
+        }
+        
+        .rwd-table td:first-child {
+            padding-top: .5em;
+        }
+        
+        .rwd-table td:last-child {
+            padding-bottom: .5em;
+        }
+        
+        .rwd-table td:before {
+            content: attr(data-th) ": ";
+            font-weight: bold;
+            width: 6.5em;
+            display: inline-block;
+        }
+        
+        @media (min-width: 480px) {
+            .rwd-table td:before {
+                display: none;
+            }
+        }
+        
+        .rwd-table th,
+        .rwd-table td {
+            text-align: left;
+        }
+        
+        @media (min-width: 480px) {
+            .rwd-table th,
+            .rwd-table td {
+                display: table-cell;
+                padding: .25em .5em;
+            }
+            .rwd-table th:first-child,
+            .rwd-table td:first-child {
+                padding-left: 0;
+            }
+            .rwd-table th:last-child,
+            .rwd-table td:last-child {
+                padding-right: 0;
+            }
+        }
+        
+        body {
+            padding: 0 2em;
+            font-family: Montserrat, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            color: #444;
+            background: #eee;
+        }
+        
+        h1 {
+            font-weight: normal;
+            letter-spacing: -1px;
+            color: #34495E;
+        }
+        
+        .rwd-table {
+            background: #34495E;
+            color: #fff;
+            border-radius: .4em;
+            overflow: hidden;
+        }
+        
+        .rwd-table tr {
+            border-color: #46637f;
+        }
+        
+        .rwd-table th,
+        .rwd-table td {
+            margin: .5em 1em;
+        }
+        
+        @media (min-width: 480px) {
+            .rwd-table th,
+            .rwd-table td {
+                padding: 1em !important;
+            }
+        }
+        
+        .rwd-table th,
+        .rwd-table td:before {
+            color: #dd5;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+
+
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -50,7 +175,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <!--  <span class="logo-mini"><b>A</b>LT</span> -->
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>PLURALSIGHT</b></span>
+                <span class="logo-lg"><b>EKLAVYA</b></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -567,7 +692,7 @@
                                     </table> -->
 
 
-                                    <div id="wrapper">
+                                    <!--    <div id="wrapper">
                                         <table class="table table-striped" align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
                                             <tr>
                                                 <th>Course Title</th>
@@ -621,7 +746,43 @@
                                             </tr>
 
                                         </table>
-                                    </div>
+                                    </div> -->
+
+
+
+                                    <!-- table and table content -->
+
+                                    <table class="rwd-table">
+                                        <tr>
+                                            <th>Courses</th>
+                                            <th>Description</th>
+                                            <th>Created By</th>
+                                            <th>Duration</th>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Movie Title"><a href="/home/sandip/Desktop/AdminLTE-2.3.7/pages/examples/web.html">Introduction to Web Development</a></td>
+                                            <td data-th="Genre">beginers</td>
+                                            <td data-th="Year">InfoxTech</td>
+                                            <td data-th="Gross">5h 30m</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Movie Title">Introduction to Java</td>
+                                            <td data-th="Genre">beginers</td>
+                                            <td data-th="Year">Denis Ritche</td>
+                                            <td data-th="Gross">6h 45m</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Movie Title">Angular</td>
+                                            <td data-th="Genre">InfoxTech</td>
+                                            <td data-th="Year">3h 30m</td>
+                                            <td data-th="Gross">$115,000,000</td>
+                                        </tr>
+                                    </table>
+
+
+
+
+
 
 
 

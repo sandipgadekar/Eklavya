@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Puralsight</title>
+    <title>Home</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,62 +24,98 @@
 
     <!-- Theme CSS -->
     <link href="dist/css/creative.min.css" rel="stylesheet">
+    <!-- search bar stylesheet -->
+    <style>
+        input[type=text] {
+            width: 200px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: cornsilk;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            -webkit-transition: width 0.4s ease-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        input[type=text]:focus {
+            width: 100%;
+        }
+    </style>
+
+    <!--view all Button stylesheet -->
+    <style>
+        .button {
+            background-color: #363636;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 2px 2px;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+
+
+
 
 </head>
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top col-lg-12">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">PLURALSIGHT</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Ekalavya</a>
             </div>
 
 
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <div class="col-lg-4">
-                            <form class="navbar-form" role="search">
-                                <div class="input-group">
+                <div>
+                    <div class="col-lg-4">
+                        <form class="navbar-form" role="search">
+                            <div class="input-group">
 
+                                <input type="text" name="search" style="width:200% !important" placeholder="Search..">
+                                <!-- <input type="text" class="form-control" placeholder="search" name="q"> -->
 
-
-                                    <input type="text" class="form-control" placeholder="search" name="q">
-                                    <div class="input-group-btn">
+                                <!-- <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
+                                    </div> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
 
-                    <li class="dropdown">
+
+                    <li class="dropdown" style="position:inherit">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Most Popular Courses" aria-expanded="false">Popular <b class="caret"></b></a>
-                        <div class="header_dropdown dropdown-menu" style="min-width: 1000px; text-align: center;">
+                        <div class="header_dropdown dropdown-menu col-xs-12" style="background-color:#181818;min-width: 1000px; text-align: center;">
                             <div class="container-lg ">
-
-
-
-
                                 <div class="col-lg-12 ">
                                     <div class="header_dropdown_software ">Most Popular Courses</div>
                                     <div class="spc_in-sm "></div>
                                 </div>
-
-
                                 <div class="col-lg-6 ">
                                     <div class="row ">
                                         <div class="col-lg-4 ">
                                             <a href="/search?q=Javascript&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
                                                     <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/path-logos/thumbnails/javascript-c1a9121add.png?w=140 " alt=" "></div>
                                                     <div class="header_dropdown_software ">Javascript</div>
                                                 </div>
@@ -87,7 +123,7 @@
                                         </div>
                                         <div class="col-lg-4 ">
                                             <a href="/search?q=C%23&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
                                                     <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/path-logos/thumbnails/c-sharp-bb3986344b.png?w=140 " alt=" "></div>
                                                     <div class="header_dropdown_software ">C#</div>
                                                 </div>
@@ -95,7 +131,7 @@
                                         </div>
                                         <div class="col-lg-4 ">
                                             <a href="/search?q=Java&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
                                                     <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/path-logos/thumbnails/java-956acc8505.png?w=140 " alt=" "></div>
                                                     <div class="header_dropdown_software ">Java</div>
                                                 </div>
@@ -105,40 +141,43 @@
                                 </div>
                                 <div class="col-lg-6 ">
                                     <div class="row ">
+
                                         <div class="col-lg-4 ">
-                                            <a href="/search?q=Angular&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
-                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/path-logos/thumbnails/angular-c1bc804186.png?w=140 " alt=" "></div>
+                                            <a href="/search?q=Angular&amp;categories=course&amp;sort=popularity" class="header_dropdown_card ">
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
+                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/path-logos/thumbnails/angular-c1bc804186.png?w=140" alt=" "></div>
                                                     <div class="header_dropdown_software ">Angular</div>
-                                                </div>
                                             </a>
+                                            </div>
                                         </div>
 
 
-
-
-
                                         <div class="col-lg-4 ">
-                                            <a href="/search?q=Python&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
-                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/python-7be70baaac.png?w=140 " alt=" "></div>
+                                            <a href="/search?q=Python&amp;categories=course&amp;sort=popularity" class="header_dropdown_card ">
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
+                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/python-7be70baaac.png?w=140" alt=" "></div>
                                                     <div class="header_dropdown_software ">Python</div>
                                                 </div>
                                             </a>
                                         </div>
+
+
                                         <div class="col-lg-4 ">
                                             <a href="/search?q=mysql&amp;categories=course&amp;sort=popularity " class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
-                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/mysql-e0720d7b98.png?w=140 " alt=" "></div>
-                                                    <div class="header_dropdown_software ">MySQL</div>
+                                                <div class="header_dropdown_overlay " style="background-color:#363636">
+                                                    <div class="header_dropdown_image "><img src="https://pluralsight.imgix.net/paths/mysql-e0720d7b98.png?w=140" alt=" "></div>
+                                                    <div class="header_dropdown_software ">Python</div>
                                                 </div>
                                             </a>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="col-lg-12 type_align--center ">
-                                    <div class="spc_in-md "></div>
-                                    <a href="/browse " class="btn-xs stroke ">View all</a>
+                                    <div class="spc_in-md"> </div>
+
+                                    <a href="#" class="button">View All</a>
+
                                 </div>
                             </div>
                         </div>
@@ -161,85 +200,103 @@
                                 <div class="col-lg-6 ">
                                     <div class="row ">
                                         <div class="col-lg-4 ">
-                                            <a class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
 
-                                                    <div class="header_dropdown_software ">Software Development</div>
-                                                    <ul>
-                                                        <li>
-                                                            <div><a href="#">Web Development</a></div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">JavaScript</a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Python</a></div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Java</a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">More..</a></div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 ">
-                                            <a href="#" class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
-                                                    <div class="header_dropdown_software ">IT OPS</div>
-                                                    <ul>
-                                                        <li>
-                                                            <div><a href="#">Certification</a></div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Security</a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Database Administration</a></div>
+                                            <a href="#" class="header_dropdown_card "></a>
+                                            <div class="header_dropdown_overlay " style="background-color: cyan ">
+                                                <div class="header_dropdown_image "></div>
+                                                <br> <a href="#"> Web Development</a>
+                                                <br>JavaScript
+                                                <br>Python
+                                                <br>Angular
+                                            </div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">IT Networking </a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">More...</a></div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </a>
-                                        </div>
 
-                                        <div class="col-lg-4 ">
-                                            <a href="#" class="header_dropdown_card ">
-                                                <div class="header_dropdown_overlay ">
-                                                    <div class="header_dropdown_software ">IT OPS</div>
-                                                    <ul>
-                                                        <li>
-                                                            <div><a href="#">Certification</a></div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Security</a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">Database Administration</a></div>
 
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">IT Networking </a></div>
-                                                        </li>
-                                                        <li>
-                                                            <div><a href="#">More...</a></div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </a>
-                                        </div>
+
+
+                                            <!--            <a class="header_dropdown_card ">
+                                                        <div class="header_dropdown_overlay ">
+
+                                                            <div class="header_dropdown_software ">Software Development</div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div><a href="#">Web Development</a></div>
+
+                                                                </li>
+                                                                <li>
+                                                                    <div><a href="#">JavaScript</a></div>
+                                                                </li>
+                                                                <li>
+                                                                    <div><a href="#">Python</a></div>
+
+                                                                </li>
+                                                                <li>
+                                                                    <div><a href="#">Java</a></div>
+                                                                </li>
+                                                                <li>
+                                                                    <div><a href="#">More..</a></div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                            </div>
+                                            <div class="col-lg-4 ">
+                                                <a href="#" class="header_dropdown_card ">
+                                                    <div class="header_dropdown_overlay ">
+                                                        <div class="header_dropdown_software ">IT OPS</div>
+                                                        <ul>
+                                                            <li>
+                                                                <div><a href="#">Certification</a></div>
+
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">Security</a></div>
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">Database Administration</a></div>
+
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">IT Networking </a></div>
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">More...</a></div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-lg-4 ">
+                                                <a href="#" class="header_dropdown_card ">
+                                                    <div class="header_dropdown_overlay ">
+                                                        <div class="header_dropdown_software ">IT OPS</div>
+                                                        <ul>
+                                                            <li>
+                                                                <div><a href="#">Certification</a></div>
+
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">Security</a></div>
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">Database Administration</a></div>
+
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">IT Networking </a></div>
+                                                            </li>
+                                                            <li>
+                                                                <div><a href="#">More...</a></div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </a>
+                                            </div>   -->
 
 
 
@@ -279,7 +336,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center ">
                     <h2 class="section-heading ">We've got what you need!</h2>
                     <hr class="light ">
-                    <p class="text-faded ">Welcome to Pluralsight. The on-demand technology learning platform you count on to stay relevant, with tools that measure your skills and solve your problems—faster.</p>
+                    <p class="text-faded ">Welcome to Eklavya. The on-demand technology learning platform you count on to stay relevant, with tools that measure your skills and solve your problems—faster.</p>
                     <a href="#services " class="page-scroll btn btn-default btn-xl sr-button ">Get Started!</a>
                 </div>
             </div>
@@ -290,7 +347,7 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-lg-12 text-center ">
-                    <h2 class="section-heading ">What makes Pluralsight Different</h2>
+                    <h2 class="section-heading ">What makes Ekalavya Different</h2>
                     <hr class="primary ">
                 </div>
             </div>
@@ -316,7 +373,7 @@
                     <div class="service-box ">
                         <i class="fa fa-4x fa-newspaper-o text-primary sr-icons "></i>
                         <h3>Get instant help</h3>
-                        <p class="text-muted ">Pluralsight mentors are available 24/7 at the click of a button. Connect with a vetted expert to power through project roadblocks, learning hurdles and more.</p>
+                        <p class="text-muted ">Eklavya mentors are available 24/7 at the click of a button. Connect with a vetted expert to power through project roadblocks, learning hurdles and more.</p>
                     </div>
                 </div>
 
